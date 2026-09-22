@@ -89,7 +89,6 @@ batllie-cata/
 │   └── development-guide.md        # Buenas prácticas y entorno local
 ├── includes/
 │   └── shortcode.php               # Motor de renderizado y plantilla HTML limpia (~260 líneas)
-├── styles.css                      # Copia en raíz de styles.css para acceso inmediato
 ├── batllie-cata.php                # Archivo principal del plugin, hooks de enqueue y endpoints
 ├── batllie-logo-transparent.png    # Logotipo oficial Batllié
 └── README.md                       # Documentación del proyecto
