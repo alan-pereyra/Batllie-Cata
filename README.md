@@ -64,6 +64,10 @@ Para insertar la experiencia en cualquier página o entrada, utiliza el shortcod
 ```text
 batllie-cata/
 ├── assets/
+│   ├── css/
+│   │   └── styles.css              # Hoja de estilos principal (fácil personalización y mantenimiento)
+│   ├── js/
+│   │   └── batllie-cata.js         # Script modular de interactividad y navegación
 │   └── images/                     # Imágenes locales de alta resolución
 │       ├── box.jpg                 # Imagen de las cajas premium
 │       ├── mate-1-cream.png        # Paso 1: El Lecho
@@ -77,9 +81,16 @@ batllie-cata/
 │       ├── chocolate-intenso.jpg    # Alfajor Chocolate Intenso
 │       ├── nuez.jpg                # Alfajor Nuez
 │       └── mousse-nutella.jpg      # Alfajor Mousse Nutella
+├── docs/                           # Documentación técnica del proyecto
+│   ├── README.md                   # Índice general
+│   ├── architecture.md             # Arquitectura y ciclo de vida
+│   ├── shortcode-guide.md          # Referencia del shortcode y eventos
+│   ├── woocommerce-integration.md  # Catálogo, tablas y productos
+│   └── development-guide.md        # Buenas prácticas y entorno local
 ├── includes/
-│   └── shortcode.php               # Lógica del shortcode, HTML, CSS y JS interactivo
-├── batllie-cata.php                # Archivo principal del plugin y endpoints de configuración
+│   └── shortcode.php               # Motor de renderizado y plantilla HTML limpia (~260 líneas)
+├── styles.css                      # Copia en raíz de styles.css para acceso inmediato
+├── batllie-cata.php                # Archivo principal del plugin, hooks de enqueue y endpoints
 ├── batllie-logo-transparent.png    # Logotipo oficial Batllié
 └── README.md                       # Documentación del proyecto
 ```

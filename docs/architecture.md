@@ -9,6 +9,10 @@ Este documento describe la arquitectura interna, la jerarquía de archivos, el c
 ```text
 batllie-cata/
 ├── assets/
+│   ├── css/
+│   │   └── styles.css              # Hoja de estilos principal (fácil mantenimiento y edición)
+│   ├── js/
+│   │   └── batllie-cata.js         # Script modular de interactividad y máquina de estados
 │   └── images/                     # Recursos gráficos locales de alta resolución
 │       ├── box.jpg                 # Imagen general de cajas premium
 │       ├── mate-1-cream.png        # Paso 1: El Lecho
@@ -29,8 +33,9 @@ batllie-cata/
 │   ├── woocommerce-integration.md  # Catálogo, tablas y productos
 │   └── development-guide.md        # Buenas prácticas y entorno local
 ├── includes/
-│   └── shortcode.php               # Motor de renderizado, interfaz y lógica JavaScript
-├── batllie-cata.php                # Archivo raíz, cabecera de WordPress y hooks
+│   └── shortcode.php               # Motor de renderizado y plantilla HTML limpia (~260 líneas)
+├── styles.css                      # Hoja de estilos en la raíz para acceso rápido
+├── batllie-cata.php                # Archivo raíz, cabecera de WordPress, enqueue y hooks
 ├── batllie-logo-transparent.png    # Logotipo oficial Batllié en alta definición
 ├── README.md                       # Documentación pública para GitHub
 └── .gitignore                      # Exclusiones de control de versiones

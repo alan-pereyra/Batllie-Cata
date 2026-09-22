@@ -17,6 +17,14 @@ if (!defined('ABSPATH')) {
 require_once plugin_dir_path(__FILE__) . 'includes/shortcode.php';
 
 /**
+ * Register CSS styles and JS script
+ */
+add_action('wp_enqueue_scripts', function() {
+    wp_register_style('batllie-cata-styles', plugins_url('assets/css/styles.css', __FILE__), array(), '1.2.1');
+    wp_register_script('batllie-cata-script', plugins_url('assets/js/batllie-cata.js', __FILE__), array(), '1.2.1', true);
+});
+
+/**
  * Endpoint to create/update the 3 Tasting Box products in Cajas Premium with tag 'cata'
  */
 add_action('init', function() {
