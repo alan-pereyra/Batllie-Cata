@@ -215,8 +215,8 @@ if (!function_exists('batllie_cata_shortcode')) {
                             <div class="batllie-cata-boxes-grid is-4-cols">
                                 <div class="batllie-cata-box-card" data-scroll-to="molienda-1">
                                     <div class="batllie-cata-box-num">I</div>
-                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional gruesa" class="batllie-cata-box-img" />
-                                    <div class="batllie-cata-box-name">Tradicional<br>gruesa</div>
+                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional fina" class="batllie-cata-box-img" />
+                                    <div class="batllie-cata-box-name">Tradicional<br>fina</div>
                                     <div class="batllie-cata-box-sub">(con palo y molienda equilibrada)</div>
                                     <button type="button" class="batllie-cata-card-scroll-btn" data-scroll-to="molienda-1">Ver molienda ↓</button>
                                 </div>
@@ -249,12 +249,12 @@ if (!function_exists('batllie_cata_shortcode')) {
 
                                 <!-- Sección I -->
                                 <div id="molienda-1" class="batllie-cata-single-step-container batllie-cata-molienda-section-item">
-                                    <h3 class="batllie-cata-section-title" style="font-size: 1.5rem;">Variación I: Tradicional gruesa</h3>
+                                    <h3 class="batllie-cata-section-title" style="font-size: 1.5rem;">Variación I: Tradicional fina</h3>
                                     <div class="batllie-cata-section-subtitle">CON PALO Y MOLIENDA EQUILIBRADA</div>
 
                                     <div class="batllie-cata-step-detail-card">
                                         <div class="batllie-cata-step-detail-img-wrap">
-                                            <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional gruesa" class="batllie-cata-step-detail-img" />
+                                            <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional fina" class="batllie-cata-step-detail-img" />
                                         </div>
                                         <div class="batllie-cata-step-detail-body">
                                             <h4 class="batllie-cata-step-detail-heading">Características de la molienda</h4>
