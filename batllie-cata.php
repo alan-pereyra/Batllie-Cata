@@ -312,3 +312,147 @@ add_action('init', function() {
         exit;
     }
 });
+
+/**
+ * Endpoint to create/update the "Experiencia matera" page and add it to the primary navigation menu
+ */
+add_action('init', function() {
+    if (isset($_GET['batllie_setup_matera_page']) && $_GET['batllie_setup_matera_page'] === 'batllie2026') {
+        header('Content-Type: application/json; charset=utf-8');
+
+        $page_slug = 'experiencia-matera';
+        $page_title = 'Experiencia matera';
+
+        // 1. Check if page already exists
+        $existing_page = get_page_by_path($page_slug);
+        if (!$existing_page) {
+            $found_pages = get_posts(array(
+                'name' => $page_slug,
+                'post_type' => 'page',
+                'post_status' => 'any',
+                'posts_per_page' => 1
+            ));
+            if (!empty($found_pages)) {
+                $existing_page = $found_pages[0];
+            }
+        }
+
+        $page_data = array(
+            'post_title'   => $page_title,
+            'post_name'    => $page_slug,
+            'post_content' => '[batllie_matera]',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+        );
+
+        if ($existing_page) {
+            $page_data['ID'] = $existing_page->ID;
+            $page_id = wp_update_post($page_data);
+            $page_action = 'updated';
+        } else {
+            $page_id = wp_insert_post($page_data);
+            $page_action = 'created';
+        }
+
+        $page_url = get_permalink($page_id);
+
+        // 2. Add to navigation menus
+        // Find candidate menus:
+        // - Menu assigned to 'superior' location
+        // - Menu 21 ('Menu Principal')
+        // - Any menu named 'Menu Principal'
+        $menu_results = array();
+        $target_menu_ids = array();
+
+        $locations = get_nav_menu_locations();
+        if (!empty($locations['superior'])) {
+            $target_menu_ids[] = (int)$locations['superior'];
+        }
+
+        $all_menus = wp_get_nav_menus();
+        if (!empty($all_menus)) {
+            foreach ($all_menus as $menu) {
+                if (stripos($menu->name, 'Principal') !== false || $menu->slug === 'menu-principal' || $menu->term_id == 21) {
+                    $target_menu_ids[] = (int)$menu->term_id;
+                }
+            }
+        }
+        $target_menu_ids = array_values(array_unique($target_menu_ids));
+
+        foreach ($target_menu_ids as $m_id) {
+            $menu_obj = wp_get_nav_menu_object($m_id);
+            if (!$menu_obj) continue;
+
+            $items = wp_get_nav_menu_items($m_id);
+            $already_exists = false;
+            $existing_item_id = 0;
+
+            if (!empty($items)) {
+                foreach ($items as $item) {
+                    if ((int)$item->object_id === (int)$page_id && $item->object === 'page') {
+                        $already_exists = true;
+                        $existing_item_id = $item->ID;
+                        break;
+                    }
+                    if (trim(mb_strtolower($item->title)) === 'experiencia matera') {
+                        $already_exists = true;
+                        $existing_item_id = $item->ID;
+                        break;
+                    }
+                }
+            }
+
+            if ($already_exists) {
+                $menu_results[] = array(
+                    'menu_id' => $m_id,
+                    'menu_name' => $menu_obj->name,
+                    'status' => 'already_present',
+                    'item_id' => $existing_item_id
+                );
+            } else {
+                // Determine position: place right after 'El Ritual de Cata' if present
+                $menu_order = 0;
+                if (!empty($items)) {
+                    foreach ($items as $item) {
+                        if (stripos($item->title, 'Cata') !== false) {
+                            $menu_order = $item->menu_order + 1;
+                        }
+                    }
+                }
+
+                $item_data = array(
+                    'menu-item-title'     => $page_title,
+                    'menu-item-object'    => 'page',
+                    'menu-item-object-id' => $page_id,
+                    'menu-item-type'      => 'post_type',
+                    'menu-item-status'    => 'publish',
+                );
+                if ($menu_order > 0) {
+                    $item_data['menu-item-position'] = $menu_order;
+                }
+
+                $new_item_id = wp_update_nav_menu_item($m_id, 0, $item_data);
+                $menu_results[] = array(
+                    'menu_id' => $m_id,
+                    'menu_name' => $menu_obj->name,
+                    'status' => is_wp_error($new_item_id) ? 'error' : 'added',
+                    'item_id' => is_wp_error($new_item_id) ? $new_item_id->get_error_message() : $new_item_id
+                );
+            }
+        }
+
+        echo json_encode(array(
+            'success' => true,
+            'page' => array(
+                'id' => $page_id,
+                'title' => $page_title,
+                'slug' => $page_slug,
+                'action' => $page_action,
+                'url' => $page_url
+            ),
+            'menus' => $menu_results
+        ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+});
+

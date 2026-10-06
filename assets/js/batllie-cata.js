@@ -1,5 +1,5 @@
 /**
- * Batllié - El Ritual de Cata
+ * Batllié - El Ritual de Cata & Experiencia Matera
  * Script de interactividad (batllie-cata.js)
  * 
  * Gestiona:
@@ -21,6 +21,7 @@
         document.documentElement.classList.add('has-batllie-cata');
         document.body.classList.add('has-batllie-cata');
 
+        var isMatera = (root.getAttribute('data-mode') === 'matera');
         var allSlides = Array.prototype.slice.call(root.querySelectorAll('.batllie-cata-slide'));
         var currentIndex = 0;
 
@@ -104,7 +105,11 @@
             if (btnNext) {
                 btnNext.disabled = (currentIndex >= totalSlides - 1);
                 btnNext.style.display = 'inline-flex';
-                btnNext.textContent = (currentIndex === totalSlides - 2) ? 'Finalizar Cata →' : 'Siguiente →';
+                if (currentIndex === totalSlides - 2) {
+                    btnNext.textContent = isMatera ? 'Finalizar Experiencia →' : 'Finalizar Cata →';
+                } else {
+                    btnNext.textContent = 'Siguiente →';
+                }
             }
         }
 
@@ -206,6 +211,19 @@
                 var targetChapter = card.getAttribute('data-goto-chapter');
                 if (targetChapter) {
                     goToSlideById(targetChapter);
+                }
+            });
+        });
+
+        // Generic selector for direct navigation to any slide
+        var gotoElements = root.querySelectorAll('[data-goto-slide]');
+        gotoElements.forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var targetSlideId = el.getAttribute('data-goto-slide');
+                if (targetSlideId) {
+                    goToSlideById(targetSlideId);
                 }
             });
         });
