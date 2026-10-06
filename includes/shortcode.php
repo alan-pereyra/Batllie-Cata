@@ -122,10 +122,10 @@ if (!function_exists('batllie_cata_shortcode')) {
 
         // Enqueue styles and scripts
         if ($css_url) {
-            wp_enqueue_style('batllie-cata-styles', $css_url, array(), '1.3.0');
+            wp_enqueue_style('batllie-cata-styles', $css_url, array(), '1.3.1');
         }
         if ($js_url) {
-            wp_enqueue_script('batllie-cata-script', $js_url, array(), '1.3.0', true);
+            wp_enqueue_script('batllie-cata-script', $js_url, array(), '1.3.1', true);
         }
 
         $uid = 'batllie_cata_' . wp_rand(1000, 9999);
@@ -134,7 +134,7 @@ if (!function_exists('batllie_cata_shortcode')) {
         ?>
         <?php if ($css_url): ?>
             <!-- External Stylesheet (styles.css) -->
-            <link rel="stylesheet" id="<?php echo esc_attr($uid); ?>-css" href="<?php echo esc_url($css_url); ?>?ver=1.3.0" type="text/css" media="all" />
+            <link rel="stylesheet" id="<?php echo esc_attr($uid); ?>-css" href="<?php echo esc_url($css_url); ?>?ver=1.3.1" type="text/css" media="all" />
         <?php endif; ?>
 
         <?php if (!empty($custom_accent)): ?>
@@ -205,87 +205,167 @@ if (!function_exists('batllie_cata_shortcode')) {
                         </div>
                     </div>
 
-                    <!-- Slide 1: Las tres etiquetas del mate -->
-                    <div class="batllie-cata-slide" data-slide-id="mate">
-                        <div class="batllie-cata-mate-steps">
-                            <h2 class="batllie-cata-section-title">El Ritual del Mate</h2>
-                            <div class="batllie-cata-section-subtitle">Los tres pasos fundamentales de la tradición</div>
-
-                            <div class="batllie-cata-mate-item batllie-cata-mate-interactive" data-goto-slide="yerba">
-                                <img src="<?php echo esc_url($asset('mate-1-cream.png', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/mate-1-cream-1790013939.png')); ?>" alt="I. El Lecho" class="batllie-cata-mate-img" />
-                                <div class="batllie-cata-mate-text">
-                                    <div class="batllie-cata-mate-step-title">I. EL LECHO</div>
-                                    <p class="batllie-cata-mate-step-desc">Llenar tres cuartas partes del recipiente con yerba Batllié orgánica. Cubrir la boca con la palma de la mano, agitar suavemente y volver a inclinar a 45° para lograr la armonía perfecta.</p>
-                                    <div class="batllie-cata-step-action">
-                                        <button type="button" class="batllie-cata-link-btn" data-goto-slide="yerba">Ver variedades de yerba →</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="batllie-cata-mate-item batllie-cata-mate-interactive" data-goto-slide="mate-step2">
-                                <img src="<?php echo esc_url($asset('mate-2-cream.png', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/mate-2-cream-1790013939.png')); ?>" alt="II. La Base" class="batllie-cata-mate-img" />
-                                <div class="batllie-cata-mate-text">
-                                    <div class="batllie-cata-mate-step-title">II. LA BASE</div>
-                                    <p class="batllie-cata-mate-step-desc">Humedecer suavemente la parte baja con agua tibia e introducir la bombilla en ese mismo sector con firmeza.</p>
-                                    <div class="batllie-cata-step-action">
-                                        <button type="button" class="batllie-cata-link-btn" data-goto-slide="mate-step2">Detalle del paso 2 →</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="batllie-cata-mate-item batllie-cata-mate-interactive" data-goto-slide="mate-step3">
-                                <img src="<?php echo esc_url($asset('mate-3-cream.png', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/mate-3-cream-1790013939.png')); ?>" alt="III. El Disfrute" class="batllie-cata-mate-img" />
-                                <div class="batllie-cata-mate-text">
-                                    <div class="batllie-cata-mate-step-title">III. EL DISFRUTE</div>
-                                    <p class="batllie-cata-mate-step-desc">Cebar con agua a una temperatura sugerida de 75°C - 80°C, evitando el hervor para preservar las notas y matices únicos de la yerba.</p>
-                                    <div class="batllie-cata-step-action">
-                                        <button type="button" class="batllie-cata-link-btn" data-goto-slide="mate-step3">Detalle del paso 3 →</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: Variaciones de la Yerba (Similar a Experiencia completa) -->
-                    <div class="batllie-cata-slide" data-slide-id="yerba">
+                    <!-- Slide 1: Experiencia Completa - 4 Variaciones (Sin texto abajo) -->
+                    <div class="batllie-cata-slide" data-slide-id="yerba-overview">
                         <div class="batllie-cata-boxes-container">
                             <h2 class="batllie-cata-section-title">Experiencia completa</h2>
                             <div class="batllie-cata-section-subtitle">NUESTRAS MOLIENDAS Y BLENDS DE YERBA ORGÁNICA</div>
 
                             <div class="batllie-cata-boxes-grid is-4-cols">
-                                <div class="batllie-cata-box-card">
+                                <div class="batllie-cata-box-card" data-goto-slide="yerba-1">
                                     <div class="batllie-cata-box-num">I</div>
                                     <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional gruesa" class="batllie-cata-box-img" />
                                     <div class="batllie-cata-box-name">Tradicional<br>gruesa</div>
                                     <div class="batllie-cata-box-sub">(con palo y molienda equilibrada)</div>
                                 </div>
-                                <div class="batllie-cata-box-card">
+                                <div class="batllie-cata-box-card" data-goto-slide="yerba-2">
                                     <div class="batllie-cata-box-num">II</div>
                                     <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Despalada gruesa" class="batllie-cata-box-img" />
                                     <div class="batllie-cata-box-name">Despalada<br>gruesa</div>
                                     <div class="batllie-cata-box-sub">(pura hoja e intensidad profunda)</div>
                                 </div>
-                                <div class="batllie-cata-box-card">
+                                <div class="batllie-cata-box-card" data-goto-slide="yerba-3">
                                     <div class="batllie-cata-box-num">III</div>
                                     <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Fina barbacuá" class="batllie-cata-box-img" />
                                     <div class="batllie-cata-box-name">Fina<br>barbacuá</div>
                                     <div class="batllie-cata-box-sub">(secado a leña y notas ahumadas)</div>
                                 </div>
-                                <div class="batllie-cata-box-card">
+                                <div class="batllie-cata-box-card" data-goto-slide="yerba-4">
                                     <div class="batllie-cata-box-num">IV</div>
                                     <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Canchada" class="batllie-cata-box-img" />
                                     <div class="batllie-cata-box-name">Canchada</div>
                                     <div class="batllie-cata-box-sub">(hoja gruesa y corte rústico)</div>
                                 </div>
                             </div>
-
-                            <p class="batllie-cata-boxes-desc">
-                                Cultivo agroecológico y sustentable en la selva misionera con 24 meses de estacionamiento natural. Cada corte y molienda responde a un perfil de sabor único, respetando el ritual y la pureza de la infusión.
-                            </p>
                         </div>
                     </div>
 
-                    <!-- Slide 3: Paso 2 Detallado -->
+                    <!-- Slide 2: Variación I: Tradicional gruesa -->
+                    <div class="batllie-cata-slide" data-slide-id="yerba-1">
+                        <div class="batllie-cata-single-step-container">
+                            <h2 class="batllie-cata-section-title">Variación I: Tradicional gruesa</h2>
+                            <div class="batllie-cata-section-subtitle">CON PALO Y MOLIENDA EQUILIBRADA</div>
+
+                            <div class="batllie-cata-step-detail-card">
+                                <div class="batllie-cata-step-detail-img-wrap">
+                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Tradicional gruesa" class="batllie-cata-step-detail-img" />
+                                </div>
+                                <div class="batllie-cata-step-detail-body">
+                                    <h3 class="batllie-cata-step-detail-heading">Características de la molienda</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Elaborada con una proporción balanceada de hojas seleccionadas y palo noble, con bajo porcentaje de polvo. Entrega un amargor amable y equilibrado, notas herbáceas frescas y una infusión ligera y noble.
+                                    </p>
+                                    <div class="batllie-cata-step-detail-divider"></div>
+                                    <h3 class="batllie-cata-step-detail-heading">Momento ideal</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        El ritual cotidiano por excelencia: ideal para encender las mañanas, acompañar las horas de trabajo continuo o compartir rondas extensas donde se prioriza un sabor armonioso y parejo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Variación II: Despalada gruesa -->
+                    <div class="batllie-cata-slide" data-slide-id="yerba-2">
+                        <div class="batllie-cata-single-step-container">
+                            <h2 class="batllie-cata-section-title">Variación II: Despalada gruesa</h2>
+                            <div class="batllie-cata-section-subtitle">PURA HOJA E INTENSIDAD PROFUNDA</div>
+
+                            <div class="batllie-cata-step-detail-card">
+                                <div class="batllie-cata-step-detail-img-wrap">
+                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Despalada gruesa" class="batllie-cata-step-detail-img" />
+                                </div>
+                                <div class="batllie-cata-step-detail-body">
+                                    <h3 class="batllie-cata-step-detail-heading">Características de la molienda</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Compuesta en un 100% por hojas puras seleccionadas de corte grueso, libre de palo. Se distingue por su gran densidad en taza, astringencia elegante y un carácter más marcado y persistente en cada cebada.
+                                    </p>
+                                    <div class="batllie-cata-step-detail-divider"></div>
+                                    <h3 class="batllie-cata-step-detail-heading">Momento ideal</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Para instancias de profunda concentración, estudio o largas jornadas. La elección predilecta para quienes disfrutan de un mate con cuerpo contundente, estimulante y de carácter firme.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Variación III: Fina barbacuá -->
+                    <div class="batllie-cata-slide" data-slide-id="yerba-3">
+                        <div class="batllie-cata-single-step-container">
+                            <h2 class="batllie-cata-section-title">Variación III: Fina barbacuá</h2>
+                            <div class="batllie-cata-section-subtitle">SECADO A LEÑA Y NOTAS AHUMADAS</div>
+
+                            <div class="batllie-cata-step-detail-card">
+                                <div class="batllie-cata-step-detail-img-wrap">
+                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Fina barbacuá" class="batllie-cata-step-detail-img" />
+                                </div>
+                                <div class="batllie-cata-step-detail-body">
+                                    <h3 class="batllie-cata-step-detail-heading">Características de la molienda</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Nacida del ancestral proceso barbacuá: secado lento a leña durante 24 horas y molienda fina. Desarrolla aromas ahumados envolventes, tonos tostados amaderados y una singular calidez en boca.
+                                    </p>
+                                    <div class="batllie-cata-step-detail-divider"></div>
+                                    <h3 class="batllie-cata-step-detail-heading">Momento ideal</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Tardes templadas, sobremesas tranquilas y días frescos o lluviosos. Un mate reflexivo para saborear con calma, evocando los orígenes más rústicos y profundos de la selva misionera.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Variación IV: Canchada -->
+                    <div class="batllie-cata-slide" data-slide-id="yerba-4">
+                        <div class="batllie-cata-single-step-container">
+                            <h2 class="batllie-cata-section-title">Variación IV: Canchada</h2>
+                            <div class="batllie-cata-section-subtitle">HOJA GRUESA Y CORTE RÚSTICO</div>
+
+                            <div class="batllie-cata-step-detail-card">
+                                <div class="batllie-cata-step-detail-img-wrap">
+                                    <img src="<?php echo esc_url($asset('yerba-bag.jpg', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/watermarked_img_11158224245304405509.jpg')); ?>" alt="Canchada" class="batllie-cata-step-detail-img" />
+                                </div>
+                                <div class="batllie-cata-step-detail-body">
+                                    <h3 class="batllie-cata-step-detail-heading">Características de la molienda</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Hojas deshidratadas partidas en fracciones amplias de corte rústico, prácticamente sin polvo. Da como resultado una infusión sumamente limpia y ligera, que no satura el lecho y tiene un lavado excepcionalmente pausado.
+                                    </p>
+                                    <div class="batllie-cata-step-detail-divider"></div>
+                                    <h3 class="batllie-cata-step-detail-heading">Momento ideal</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        La compañera insustituible para tereré con agua helada o jugos cítricos en días cálidos. También idónea para quienes prefieren un mate muy liviano, digestivo y fluido para paseos al aire libre.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Paso I: El Lecho -->
+                    <div class="batllie-cata-slide" data-slide-id="mate-step1">
+                        <div class="batllie-cata-single-step-container">
+                            <h2 class="batllie-cata-section-title">Paso I: El Lecho</h2>
+                            <div class="batllie-cata-section-subtitle">LA PREPARACIÓN Y ARMONÍA INICIAL</div>
+
+                            <div class="batllie-cata-step-detail-card">
+                                <div class="batllie-cata-step-detail-img-wrap">
+                                    <img src="<?php echo esc_url($asset('mate-1-cream.png', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/mate-1-cream-1790013939.png')); ?>" alt="Paso I: El Lecho" class="batllie-cata-step-detail-img" />
+                                </div>
+                                <div class="batllie-cata-step-detail-body">
+                                    <h3 class="batllie-cata-step-detail-heading">Carga y oxigenación</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Llenar tres cuartas partes del recipiente con tu variedad predilecta de yerba Batllié orgánica. Cubrir la boca del mate con la palma de la mano, invertirlo con cuidado y agitarlo suavemente para que los componentes más finos se acomoden en la parte superior.
+                                    </p>
+                                    <div class="batllie-cata-step-detail-divider"></div>
+                                    <h3 class="batllie-cata-step-detail-heading">La inclinación a 45°</h3>
+                                    <p class="batllie-cata-step-detail-p">
+                                        Volver el mate a su posición recostando la yerba a 45° sobre uno de los laterales. Esto creará una pendiente firme, liberando un espacio en la base donde se iniciará el templado y la colocación de la bombilla.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7: Paso II: La Base -->
                     <div class="batllie-cata-slide" data-slide-id="mate-step2">
                         <div class="batllie-cata-single-step-container">
                             <h2 class="batllie-cata-section-title">Paso II: La Base</h2>
@@ -310,7 +390,7 @@ if (!function_exists('batllie_cata_shortcode')) {
                         </div>
                     </div>
 
-                    <!-- Slide 4: Paso 3 Detallado -->
+                    <!-- Slide 8: Paso III: El Disfrute -->
                     <div class="batllie-cata-slide" data-slide-id="mate-step3">
                         <div class="batllie-cata-single-step-container">
                             <h2 class="batllie-cata-section-title">Paso III: El Disfrute</h2>
@@ -335,7 +415,7 @@ if (!function_exists('batllie_cata_shortcode')) {
                         </div>
                     </div>
 
-                    <!-- Slide 5: Cierre Matera -->
+                    <!-- Slide 9: Cierre Matera -->
                     <div class="batllie-cata-slide" data-slide-id="closing">
                         <div class="batllie-cata-closing">
                             <h2>Yerba Mate Orgánica de Autor</h2>
@@ -572,7 +652,7 @@ if (!function_exists('batllie_cata_shortcode')) {
 
         <?php if ($js_url): ?>
             <!-- External Script (batllie-cata.js) Fallback -->
-            <script src="<?php echo esc_url($js_url); ?>?ver=1.3.0" defer></script>
+            <script src="<?php echo esc_url($js_url); ?>?ver=1.3.1" defer></script>
         <?php endif; ?>
         <?php
         return ob_get_clean();
