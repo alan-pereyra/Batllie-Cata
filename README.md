@@ -1,6 +1,6 @@
 # Batllié - Ritual de Cata (WordPress Plugin)
 
-**Batllié - Ritual de Cata** es un plugin para WordPress que ofrece una experiencia interactiva inmersiva tipo novela visual y protocolo de cata sensorial para los alfajores de autor y yerba mate orgánica de Batllié.
+**Batllié - Ritual de Cata** es un plugin para WordPress que ofrece una experiencia interactiva inmersiva tipo novela visual y protocolo de cata sensorial para los alfajores de autor y yerba mate agroecológica de Batllié.
 
 Cuenta con diseño responsive enfocado a móviles y escritorio, arquitectura de audio ambiental relajante, navegación fluida por capítulos sensoriales, integración nativa con WooCommerce y compatibilidad con el personalizador de temas de WordPress.
 
@@ -10,7 +10,7 @@ Cuenta con diseño responsive enfocado a móviles y escritorio, arquitectura de 
 
 - **Experiencia Inmersiva:** Formato interactivo por diapositivas (slides) guiadas con barra de progreso y navegación por teclado o táctil.
 - **Audio Ambiental:** Reproductor de sonido ambiental integrado con controles de reproducción/silencio y selector de activación en la pantalla de bienvenida.
-- **Paso Condicional de Mate:** Diapositiva interactiva con el protocolo paso a paso para cebar el mate tradicional con yerba orgánica Batllié (activable/desactivable en el inicio).
+- **Paso Condicional de Mate:** Diapositiva interactiva con el protocolo paso a paso para cebar el mate tradicional con yerba agroecológica Batllié (activable/desactivable en el inicio).
 - **Navegación Rápida por Cajas (Capítulos):** Menú interactivo de selección de cajas que permite saltar directamente al capítulo deseado:
   - **Capítulo I: La Chispa Viva** (Cítricos y ligeros: Limón y Batllié Blanco).
   - **Capítulo II: El Equilibrio Clásico** (Las raíces de la casa: Batllié Negro, Chocolate Blanco y Café Suizo).

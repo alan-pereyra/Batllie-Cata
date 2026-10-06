@@ -232,7 +232,7 @@ if (!function_exists('batllie_cata_shortcode')) {
                     <div class="batllie-cata-slide" data-slide-id="yerba">
                         <div class="batllie-cata-boxes-container">
                             <h2 class="batllie-cata-section-title">Experiencia completa</h2>
-                            <div class="batllie-cata-section-subtitle">NUESTRAS MOLIENDAS Y BLENDS DE YERBA ORGÁNICA</div>
+                            <div class="batllie-cata-section-subtitle">NUESTRAS MOLIENDAS Y BLENDS DE YERBA AGROECOLÓGICA</div>
 
                             <!-- 4 Cards Grid (Sin texto abajo) -->
                             <div class="batllie-cata-boxes-grid is-4-cols">
@@ -378,7 +378,7 @@ if (!function_exists('batllie_cata_shortcode')) {
                                 <div class="batllie-cata-step-detail-body">
                                     <h4 class="batllie-cata-step-detail-heading">Carga y oxigenación</h4>
                                     <p class="batllie-cata-step-detail-p">
-                                        Llenar tres cuartas partes del recipiente con tu variedad predilecta de yerba Batllié orgánica. Cubrir la boca del mate con la palma de la mano, invertirlo con cuidado y agitarlo suavemente para que los componentes más finos se acomoden en la superficie.
+                                        Llenar tres cuartas partes del recipiente con tu variedad predilecta de yerba Batllié agroecológica. Cubrir la boca del mate con la palma de la mano, invertirlo con cuidado y agitarlo suavemente para que los componentes más finos se acomoden en la superficie.
                                     </p>
                                     <div class="batllie-cata-step-detail-divider"></div>
                                     <h4 class="batllie-cata-step-detail-heading">La inclinación a 45°</h4>
@@ -443,11 +443,11 @@ if (!function_exists('batllie_cata_shortcode')) {
                     <!-- Slide 5: Cierre Matera -->
                     <div class="batllie-cata-slide" data-slide-id="closing">
                         <div class="batllie-cata-closing">
-                            <h2>Yerba Mate Orgánica</h2>
+                            <h2>Yerba Mate Agroecológica</h2>
                             <p style="font-style: italic; color: var(--batllie-text);">En Batllié concebimos el mate como un ritual de pausa, encuentro y conexión con lo esencial. Nos alegra que formes parte de esta experiencia única.</p>
 
                             <div class="batllie-cata-closing-actions">
-                                <a href="<?php echo esc_url($atts['shop_url']); ?>" class="batllie-cata-btn-shop">Pedir Yerba Mate Orgánica</a>
+                                <a href="<?php echo esc_url($atts['shop_url']); ?>" class="batllie-cata-btn-shop">Pedir Yerba Mate Agroecológica</a>
                                 <button type="button" class="batllie-cata-btn-restart">Reiniciar Experiencia</button>
                             </div>
                         </div>
@@ -498,7 +498,7 @@ if (!function_exists('batllie_cata_shortcode')) {
                                 <img src="<?php echo esc_url($asset('mate-1-cream.png', 'https://empralidad.com.ar/batllie/wp-content/uploads/2026/09/mate-1-cream-1790013939.png')); ?>" alt="I. El Lecho" class="batllie-cata-mate-img" />
                                 <div class="batllie-cata-mate-text">
                                     <div class="batllie-cata-mate-step-title">I. EL LECHO</div>
-                                    <p class="batllie-cata-mate-step-desc">Llenar tres cuartas partes del recipiente con yerba Batllié orgánica. Cubrir la boca con la palma de la mano, agitar suavemente y volver a inclinar a 45° para lograr la armonía perfecta.</p>
+                                    <p class="batllie-cata-mate-step-desc">Llenar tres cuartas partes del recipiente con yerba Batllié agroecológica. Cubrir la boca con la palma de la mano, agitar suavemente y volver a inclinar a 45° para lograr la armonía perfecta.</p>
                                 </div>
                             </div>
 

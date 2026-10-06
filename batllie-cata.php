@@ -118,7 +118,7 @@ add_action('init', function() {
     </div>
     <div style="' . $infoBox . '">
         <p style="margin: 0 0 6px 0;"><strong>📦 Presentación:</strong> Caja rígida de colección Batllié con 6 unidades seleccionadas en envoltorio individual de máxima frescura.</p>
-        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo tradicional con yerba orgánica Batllié a 75°C - 80°C o infusión de té verde cítrico.</p>
+        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo tradicional con yerba agroecológica Batllié a 75°C - 80°C o infusión de té verde cítrico.</p>
     </div>
 </div>',
                 'price' => '13500',
@@ -174,7 +174,7 @@ add_action('init', function() {
     </div>
     <div style="' . $infoBox . '">
         <p style="margin: 0 0 6px 0;"><strong>📦 Presentación:</strong> Caja rígida de colección Batllié con 6 unidades seleccionadas en envoltorio individual de máxima frescura.</p>
-        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo con yerba orgánica Batllié a 75°C - 80°C o café espresso de grano tostado natural.</p>
+        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo con yerba agroecológica Batllié a 75°C - 80°C o café espresso de grano tostado natural.</p>
     </div>
 </div>',
                 'price' => '13500',
@@ -230,7 +230,7 @@ add_action('init', function() {
     </div>
     <div style="' . $infoBox . '">
         <p style="margin: 0 0 6px 0;"><strong>📦 Presentación:</strong> Caja rígida de colección Batllié con 6 unidades seleccionadas en envoltorio individual de máxima frescura.</p>
-        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo con yerba orgánica Batllié a 75°C - 80°C o café de tueste oscuro / destilados añejos.</p>
+        <p style="margin: 0;"><strong>🌿 Maridaje sugerido:</strong> Mate amargo con yerba agroecológica Batllié a 75°C - 80°C o café de tueste oscuro / destilados añejos.</p>
     </div>
 </div>',
                 'price' => '13500',
