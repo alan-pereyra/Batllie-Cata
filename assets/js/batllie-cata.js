@@ -228,6 +228,22 @@
             });
         });
 
+        // Smooth scroll to element within the slide
+        var scrollElements = root.querySelectorAll('[data-scroll-to]');
+        scrollElements.forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var targetId = el.getAttribute('data-scroll-to');
+                if (targetId) {
+                    var targetEl = root.querySelector('#' + targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
         window.addEventListener('keydown', function(e) {
             var activeSlides = getActiveSlides();
             if (e.key === 'ArrowRight' || e.key === ' ') {

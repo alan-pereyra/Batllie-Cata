@@ -809,3 +809,38 @@ body.has-batllie-cata {
     margin: 14px auto;
     width: 50%;
 }
+
+/* Card Scroll Button & Moliendas Scroll Section */
+.batllie-cata-root .batllie-cata-card-scroll-btn {
+    align-items: center;
+    background: rgba(253, 255, 221, 0.08);
+    border: 1px solid rgba(253, 255, 221, 0.25);
+    border-radius: 16px;
+    color: var(--batllie-accent);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+.batllie-cata-root .batllie-cata-card-scroll-btn:hover {
+    background-color: var(--batllie-accent);
+    border-color: var(--batllie-accent);
+    color: var(--batllie-bg);
+}
+.batllie-cata-root .batllie-cata-moliendas-scroll-section {
+    border-top: 1px solid rgba(253, 255, 221, 0.12);
+    margin-top: 32px;
+    padding-top: 24px;
+    width: 100%;
+}
+.batllie-cata-root .batllie-cata-molienda-section-item {
+    margin-bottom: 24px;
+    scroll-margin-top: 16px;
+}
