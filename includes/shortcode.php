@@ -97,6 +97,29 @@ if (!function_exists('batllie_cata_shortcode')) {
         }
         $logo_url = !empty($atts['logo']) ? $atts['logo'] : (!empty($atts['logo_url']) ? $atts['logo_url'] : $logo_clean_local);
 
+        // Experiencia Matera: Reemplazar por la imagen del navbar configurada en el Customizer del tema (emp_components_nav_logo)
+        if ($is_matera && empty($atts['logo']) && empty($atts['logo_url'])) {
+            $navbar_logo_url = '';
+            if (function_exists('get_theme_mod')) {
+                $nav_logo_id = get_theme_mod('emp_components_nav_logo');
+                if ($nav_logo_id) {
+                    $navbar_logo_url = is_numeric($nav_logo_id) ? wp_get_attachment_url($nav_logo_id) : $nav_logo_id;
+                }
+                if (!$navbar_logo_url) {
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    if ($custom_logo_id) {
+                        $navbar_logo_url = is_numeric($custom_logo_id) ? wp_get_attachment_url($custom_logo_id) : $custom_logo_id;
+                    }
+                }
+            }
+            if (!$navbar_logo_url) {
+                $navbar_logo_url = 'https://batllie.com.ar/wp-content/uploads/2026/10/1791251556643.jpg';
+            }
+            if (!empty($navbar_logo_url)) {
+                $logo_url = $navbar_logo_url;
+            }
+        }
+
         // CSS and JS URLs
         $css_url = '';
         if (file_exists(plugin_dir_path(__FILE__) . '../assets/css/styles.css')) {
